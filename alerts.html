@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Alerts</h1>
+
+    <h1>Tables</h1>
+    <table class="tbl">
+
+    </table>
+    <script>
+        let a = 10;
+        console.log("the value of a is: ", a);
+        console.log("the value of ++a is: ", ++a);
+        console.log("the value of a is: ", a);
+        console.log("the value of a++ is: ", a++);
+        console.log("the value of a is: ", a);
+        
+        console.log("the value of --a is: ", --a);
+        console.log("the value of a is: ", a);
+        console.log("the value of a-- is: ", a--);
+        console.log("the value of a is: ", a);
+
+        // Q2===================
+
+        let b =2, c = 1;
+        let result = --b - --c + ++c + c--;
+        console.log("--b - --c + ++c + c-- = " + result);
+
+        // Q3----------------------
+        let num = prompt("Enter a number of which you want to make multiplication table");
+
+        num === "" || num === null ? num = 5 : num = num;
+
+        for(let i = 1; i <= 10; i++){
+            console.log(`${num} x ${i} = ${num*i}`)
+        }
+
+        // Q6 ---------------------------------
+        let totalMarks = 100;
+        let head = ["Subject","Total Marks", "Obtained Marks", "Percentage"];
+
+        let phyMarks = 99, chemMarks = 95, compMarks = 100;
+
+        let data = [head, ["Physics",totalMarks, phyMarks, phyMarks/totalMarks*100],["Chemistry",totalMarks, chemMarks, chemMarks/totalMarks*100],["Computer",totalMarks, compMarks, compMarks/totalMarks*100],["Totals", totalMarks*3, chemMarks+compMarks+phyMarks, ((chemMarks+compMarks+phyMarks)/(totalMarks*3))*100]];
+
+         const table = document.querySelector(".tbl");
+         
+         for(let i = 0; i < data.length; i++){
+             const tr = document.createElement("tr");
+             table.append(tr);
+
+             for(let j = 0; j < data[i].length; j++){
+                 if(i === 0){
+                    const th = document.createElement("th");
+                    th.innerHTML = data[i][j];
+                    tr.append(th);
+                }
+                else{
+                    const td = document.createElement("td");
+                 td.innerHTML = data[i][j];
+                 tr.append(td);
+                }
+            }
+         }
+
+
+    </script>
+</body>
+</html>
