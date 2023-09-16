@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Qualifications</h2>
+    <div class="c1"></div>
+
+    <h2>Scores</h2>
+    <div class="c2"></div>
+
+    <h2>Colours</h2>
+    <div class="c3"></div>
+
+    <h2>Scores</h2>
+    <p class="c4"></p>
+    <p class="c5"></p>
+    
+    <h2>Cities</h2>
+    <p class="c6"></p>
+    <p class="c7"></p>
+    
+    <h2>Cities</h2>
+    <p class="c8"></p>
+    <p class="c9"></p>
+
+    <h2>Mobile Phones</h2>
+    <label for="mobile">Choose a mobile company</label>
+    <select name="mobileCopanies" id="mobile">
+    </select>
+
+    <script>
+        let arr1 = [];
+        let arr2 = new Array();
+        let arr3 = ["Pakistan", "Quetta", "Peshawar"];
+        let arr4 = new Array(1,2,3,4,5);
+        let arr5 = new Array(true, false);
+        let arr6 = [1,2,3,"Pakistan", true, ["a", "b", "c"], {a:1, b:2,c:3}];
+        let arr7 = ["SSC", "HSC", "BE (in progress)"];
+        arr7.map((element, i) => {
+            const container1 = document.querySelector(".c1");
+
+            const p = document.createElement("p");
+            p.setAttribute("class", `p${i+1}`);
+            container1.append(p);
+            p.innerHTML = `${i+1}- ${element}`;
+        });
+
+        let arr8 = new Array("Ammar", "Hamza", "Zain", "Huzaifa");
+        let arr9 = [495,496, 497, 498];
+
+        for(let i = 0; i < arr8.length; i++){
+            const container1 = document.querySelector(".c2");
+
+            const p = document.createElement("p");
+            p.setAttribute("class", `q${i+1}`);
+            container1.append(p);
+            p.innerHTML = `Score of ${arr8[i]} is ${arr9[i]}. Percentage: ${(arr9[i] / 500) * 100}`;
+        }
+
+        // function displayColour(classNumber, array){
+        //     const container1 = document.querySelector(".c3");
+
+        //     const p = document.createElement("p");
+        //     p.setAttribute("class", `r${classNumber}`);
+        //     container1.append(p);
+        //     p.innerHTML = `Colur array: ${array}`;
+        // }
+        // let colours = ["red", "green", "blue", "violet"];
+        // displayColour(1, colours)
+        
+        // let add1 = prompt("What colour you want to add to the start");
+        // colours.unshift(add1);
+        // displayColour(2, colours)
+        
+        // let end = prompt("What colour you want to end");
+        // colours.push(end);
+        // displayColour(3, colours)
+        
+        // colours.splice(0, 0, "purple", "indigo");
+        // displayColour(4, colours)
+        
+        // colours.shift();
+        // displayColour(5, colours)
+        
+        //     colours.pop();
+        // displayColour(6, colours)
+        
+        // let add2 = prompt("Enter the colour and index you want to add your colour in the format like <colour> <index>.");
+            
+        //     let add2_arr = add2.split(" ");
+        //     colours.splice(parseInt(add2_arr[1]), 0, add2_arr[0]);
+        //     displayColour(7, colours)
+            
+        //     let del = prompt("Enter the index and no.of colours from that index you want to delete your colour in the format like <index> <delete count>.");
+                
+        //         let del_arr = del.split(" ");
+        //     colours.splice(parseInt(del_arr[0]), parseInt(del_arr[1]));
+        //     displayColour(8, colours)
+
+
+            let arr10 = [320, 230, 480, 120];
+            const c4 = document.querySelector(".c4");
+            const c5 = document.querySelector(".c5");
+
+            c4.innerHTML = `Original Array: ${arr10}`;
+            c5.innerHTML = `Sorted Array: ${arr10.sort((a,b) => a-b)}`;
+            
+            
+            let cities = ["Karachi", "Quetta", "Pehsawar", "Islamabad", "Lahore"];
+            
+            let selectedCities = cities.slice(0, 3);
+            
+            const c6 = document.querySelector(".c6");
+            const c7 = document.querySelector(".c7");
+
+            c6.innerHTML = `Cities list: ${cities}`;
+            c7.innerHTML = `Selected cities list: ${selectedCities}`;
+
+            let arr11 = ["This", "is", "my", "cat"];
+            let str11 = arr11.join(" ");
+
+            const c8 = document.querySelector(".c8");
+            const c9 = document.querySelector(".c9");
+
+            c8.innerHTML = `Array: ${arr11}`;
+            c9.innerHTML = `String: ${str11}`;
+
+            let mobile = ["Apple", "Samsung", "Motorolla", "Nokia", "Sony", "Haier"];
+            let mySelect = document.querySelector("#mobile");
+            mobile.map((elements) => {
+                let opt = document.createElement("option");
+                opt.setAttribute("value", elements)
+                opt.innerHTML = elements;
+                mySelect.add(opt, null);
+            })
+            
+        
+
+
+    </script>
+</body>
+</html>
